@@ -1,0 +1,42 @@
+[ 20%] Running cpp protocol buffer compiler on libfuzzer_example.proto
+Scanning dependencies of target lpm_google_example-proto
+[ 40%] Building CXX object CMakeFiles/lpm_google_example-proto.dir/libfuzzer_example.pb.cc.o
+[ 60%] Linking CXX static library liblpm_google_example-proto.a
+[ 60%] Built target lpm_google_example-proto
+Scanning dependencies of target lpm_google_example
+[ 80%] Building CXX object CMakeFiles/lpm_google_example.dir/libfuzzer_example.cc.o
+[100%] Linking CXX executable lpm_google_example
+/usr/bin/ld: /lib/x86_64-linux-gnu/crt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::LoadProtoInput(bool, unsigned char const*, unsigned long, google::protobuf::Message*)':
+libfuzzer_macro.cc:(.text+0xb83): undefined reference to `protobuf_mutator::ParseBinaryMessage(unsigned char const*, unsigned long, google::protobuf::Message*)'
+/usr/bin/ld: libfuzzer_macro.cc:(.text+0xb93): undefined reference to `protobuf_mutator::ParseTextMessage(unsigned char const*, unsigned long, google::protobuf::Message*)'
+/usr/bin/ld: libfuzzer_macro.cc:(.text+0xbb2): undefined reference to `protobuf_mutator::Mutator::Seed(unsigned int)'
+/usr/bin/ld: libfuzzer_macro.cc:(.text+0xbcd): undefined reference to `protobuf_mutator::Mutator::Fix(google::protobuf::Message*)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::RegisterPostProcessor(google::protobuf::Descriptor const*, std::function<void (google::protobuf::Message*, unsigned int)>)':
+libfuzzer_macro.cc:(.text+0xf85): undefined reference to `protobuf_mutator::Mutator::RegisterPostProcessor(google::protobuf::Descriptor const*, std::function<void (google::protobuf::Message*, unsigned int)>)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::MutateMessage(unsigned int, protobuf_mutator::libfuzzer::(anonymous namespace)::InputReader const&, protobuf_mutator::libfuzzer::(anonymous namespace)::OutputWriter*, google::protobuf::Message*)':
+libfuzzer_macro.cc:(.text+0x1129): undefined reference to `protobuf_mutator::Mutator::Seed(unsigned int)'
+/usr/bin/ld: libfuzzer_macro.cc:(.text+0x11f0): undefined reference to `protobuf_mutator::Mutator::Mutate(google::protobuf::Message*, unsigned long)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::BinaryInputReader::Read(google::protobuf::Message*) const':
+libfuzzer_macro.cc:(.text+0x1595): undefined reference to `protobuf_mutator::ParseBinaryMessage(unsigned char const*, unsigned long, google::protobuf::Message*)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::BinaryOutputWriter::Write(google::protobuf::Message const&)':
+libfuzzer_macro.cc:(.text+0x15f8): undefined reference to `protobuf_mutator::SaveMessageAsBinary(google::protobuf::Message const&, unsigned char*, unsigned long)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::TextInputReader::Read(google::protobuf::Message*) const':
+libfuzzer_macro.cc:(.text+0x1655): undefined reference to `protobuf_mutator::ParseTextMessage(unsigned char const*, unsigned long, google::protobuf::Message*)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::TextOutputWriter::Write(google::protobuf::Message const&)':
+libfuzzer_macro.cc:(.text+0x16b8): undefined reference to `protobuf_mutator::SaveMessageAsText(google::protobuf::Message const&, unsigned char*, unsigned long)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::libfuzzer::(anonymous namespace)::CrossOverMessages(unsigned int, protobuf_mutator::libfuzzer::(anonymous namespace)::InputReader const&, protobuf_mutator::libfuzzer::(anonymous namespace)::InputReader const&, protobuf_mutator::libfuzzer::(anonymous namespace)::OutputWriter*, google::protobuf::Message*, google::protobuf::Message*)':
+libfuzzer_macro.cc:(.text+0x1702): undefined reference to `protobuf_mutator::Mutator::Seed(unsigned int)'
+/usr/bin/ld: libfuzzer_macro.cc:(.text+0x1804): undefined reference to `protobuf_mutator::Mutator::CrossOver(google::protobuf::Message const&, google::protobuf::Message*, unsigned long)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_macro.cc.o): in function `protobuf_mutator::Mutator::~Mutator()':
+libfuzzer_macro.cc:(.text._ZN16protobuf_mutator7MutatorD2Ev[_ZN16protobuf_mutator7MutatorD2Ev]+0x22): undefined reference to `vtable for protobuf_mutator::Mutator'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_mutator.cc.o): in function `protobuf_mutator::libfuzzer::Mutator::~Mutator()':
+libfuzzer_mutator.cc:(.text._ZN16protobuf_mutator9libfuzzer7MutatorD0Ev[_ZN16protobuf_mutator9libfuzzer7MutatorD0Ev]+0x22): undefined reference to `vtable for protobuf_mutator::Mutator'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_mutator.cc.o):(.rodata+0x50): undefined reference to `protobuf_mutator::Mutator::MutateBool(bool)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_mutator.cc.o):(.rodata+0x58): undefined reference to `protobuf_mutator::Mutator::MutateEnum(unsigned long, unsigned long)'
+/usr/bin/ld: /usr/local/lib/libprotobuf-mutator-libfuzzer.a(libfuzzer_mutator.cc.o):(.rodata+0x110): undefined reference to `typeinfo for protobuf_mutator::Mutator'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [CMakeFiles/lpm_google_example.dir/build.make:104: lpm_google_example] Error 1
+make[1]: *** [CMakeFiles/Makefile2:124: CMakeFiles/lpm_google_example.dir/all] Error 2
+make: *** [Makefile:103: all] Error 2
