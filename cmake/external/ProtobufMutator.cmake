@@ -7,8 +7,6 @@ include_directories(${LPM_INCLUDE_DIRS})
 include_directories(${LPM_INCLUDE_DIRS}/libprotobuf-mutator)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-set(LPM_PROTOBUF_PACKAGE_PATH ${LPM_INSTALL_DIR}/src/${LPM_TARGET}-build/build/external.protobuf/lib/cmake)
-
 set(LPM_LIBRARIES protobuf-mutator protobuf-mutator-libfuzzer)
 foreach(lib ${LPM_LIBRARIES})
   if (MSVC)

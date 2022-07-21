@@ -21,14 +21,15 @@ protobuf_generate(LANGUAGE cpp
 target_link_libraries(lpm_google_example-proto
                       ${PROTOBUF_LIBRARIES}
                       )
+include(CMakePrintHelpers)
 
 set_property(TARGET lpm_google_example-proto
              PROPERTY COMPILE_FLAGS ${NO_FUZZING_FLAGS})
-             include(CMakePrintHelpers)
-             cmake_print_variables(LPM_LIBRARIES)
+cmake_print_variables(LPM_LIBRARIES)
 target_link_libraries(lpm_google_example
                       lpm_google_example-proto
                       protobuf-mutator-libfuzzer
+                      protobuf-mutator
                       )
 
 set(FUZZING_FLAGS "-fsanitize=fuzzer-no-link,address")
