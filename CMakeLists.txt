@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 project(LPM_GOOGLE_EXAMPLE CXX)
-set(CMAKE_REQUIRED_FLAGS "-fsanitize=address")
 
 add_executable(lpm_google_example
                libfuzzer_example.cc)

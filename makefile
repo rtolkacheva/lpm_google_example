@@ -1,11 +1,10 @@
 TARGET := lpm_google_example
 CXX := clang++
-CXXFLAGS := -g -fsanitize=fuzzer-no-link 
+CXXFLAGS := -g -fsanitize=fuzzer,address 
 CXXLIBS := -lprotobuf-mutator -lprotobuf-mutator-libfuzzer -lprotobufd
-CXX_LD_FLAGS :=-fsanitize=fuzzer,address 
 
 $(TARGET): libfuzzer_example.pb.o libfuzzer_example.cc
-	$(CXX) $(CXXFLAGS) $(CXXLIBS) $(CXX_LD_FLAGS) $< -o $@
+	$(CXX) -v $(CXXFLAGS) $(CXXLIBS) $< -o $@
 
 libfuzzer_example.pb.h: proto
 libfuzzer_example.pb.cc: proto
