@@ -7,7 +7,7 @@ include_directories(${LPM_INCLUDE_DIRS})
 include_directories(${LPM_INCLUDE_DIRS}/libprotobuf-mutator)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-set(LPM_LIBRARIES protobuf-mutator protobuf-mutator-libfuzzer)
+set(LPM_LIBRARIES protobuf-mutator-libfuzzer protobuf-mutator) # this exact order
 foreach(lib ${LPM_LIBRARIES})
   if (MSVC)
     set(LIB_PATH ${LPM_INSTALL_DIR}/lib/lib${lib}.lib)
